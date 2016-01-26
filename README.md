@@ -1,7 +1,3 @@
-**Demo web app. Submits API calls to Kontomatik API.**
+**A demo web app that submits Http calls to Kontomatik API and displays the response for each request**
 
-To import data, select bank BGZ from Poland.
 
-`username: test`
-
-`password: Test123`

@@ -1,0 +1,177 @@
+
+                 var method = "GET";
+                 var url = "http://localhost:9000/request";
+                 var xhr = new XMLHttpRequest();
+
+                 if (xhr) {
+                     alert("here");
+                     xhr.open(method, url, true);
+                     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                     xhr.send("apiKey=xoxo");
+
+                 }
+
+
+
+
+
+
+ xhr.onreadystatechange = function() {
+                        alert(xhr.responseText);
+                        if(request.readyState == 4 && request.status == 200) {
+                            //alert(request.responseText);
+                        }
+                    };
+
+
+
+
+
+  var supportAction =#{jsAction @routes.Application.support()}
+
+
+
+  <!DOCTYPE html>
+  <head>
+      <title>Account Info</title>
+      <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+  <body>
+  <p align="center">empty body</p>
+  @content
+  </body>
+
+
+
+
+
+          Promise<WSResponse> responsePromise = request.post(data);
+
+          Promise<Document> documentPromise = responsePromise.map(
+                  new F.Function<WSResponse, Document>() {
+                      @Override
+                      public Document apply(WSResponse wsResponse) throws Throwable {
+                          return wsResponse.asXml();
+                      }
+                  }
+          );
+
+          if (documentPromise != null) {
+
+              xmld = documentPromise.get(2000L);
+
+              if (xmld != null) {
+
+                  System.out.println(xmld.getDoctype());
+                  System.out.println(xmld.getDocumentURI());
+              }
+          }
+
+
+          <div id="myButtons" style="display: none" align="center">
+                      <form action="@routes.Application.requestImportOwners()" method="get">
+                          <button id = "myButton">View import-owners command response</button>
+                      </form>
+                      <form action="@routes.Application.requestDefaultImport()" method="get">
+                          <button id = "myButton">View default-import command response</button>
+                      </form>
+                  </div>
+
+                   <div id="myButtons" align="center">
+                              <form action="@routes.Application.requestImportOwners()" method="get">
+                                  <button>View import-owners command response</button>
+                              </form>
+                              <form action="@routes.Application.requestDefaultImport()" method="get">
+                                  <button>View default-import command response</button>
+                              </form>
+                          </div>
+
+
+public Document loadXMLFromString(String xml) throws Exception
+    {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+
+        factory.setNamespaceAware(true);
+        DocumentBuilder builder = factory.newDocumentBuilder();
+
+        return builder.parse(new ByteArrayInputStream(xml.getBytes()));
+    }
+
+
+
+    <div id="footer">
+            <h2>Web app built with Play Framework</h2>
+        </div>
+
+        #section {
+            height: 500px ;
+            color: white ;
+            text-align: center ;
+            }
+
+                <div id="kontomatik" align="center">@content</div>
+
+                    <div id="kontomatik"><pre>@s</pre></div>
+
+
+
+ String fileName = "downloaded/import-owners.xml";
+         writeXmlDoc(xmlDoc, fileName);
+         return ok(views.html.response.render(fileName));
+
+
+switch(command) {
+                case DEFAULT_IMPORT:
+                    xmlDoc = session.fetchResultForCommand(command, additionalParams);
+                    break;
+                default:
+                    xmlDoc = session.fetchResultForCommand(command, null);
+            }
+
+
+ if (command == Session.Command.IMPORT_OWNERS {
+                 xmlDoc = session.fetchResultForCommand(command, null);
+
+            }
+            else {
+                xmlDoc = session.fetchResultForCommand(command, additionalParams);
+            }
+
+switch(command) {
+                case DEFAULT_IMPORT:
+                    xmlDoc = session.fetchResultForCommand(command, additionalParams);
+                    break;
+                case IMPORT_ACCOUNTS:
+                    xmlDoc = session.fetchResultForCommand(command, additionalParams);
+                    // parse commandId
+                    break;
+                    case: IMPORT_TRANSACTIONS:
+                    xmlDoc = session.fetchResultForCommand(command, additionalParams);
+                case IMPORT_OWNERS:
+                    xmlDoc = session.fetchResultForCommand(command, null);
+            }
+
+
+url = 'http://ks3374725.kimsufi.com:8080/KontomatikDemo/session/';
+
+var getLocation = function(href) {
+                    var l = document.createElement("a");
+                    l.href = href;
+                    return l;
+                };
+                var l = getLocation(document.URL);
+                var hostname = l.hostname;
+
+
+alert('readyState = ' + xhttp.readyState + ' status = ' + xhttp.status);
+
+
+import com.github.play2war.plugin._
+
+Play2WarPlugin.play2WarSettings
+
+Play2WarKeys.servletVersion := "3.1"
+
+
+
+addSbtPlugin("com.github.play2war" % "play2-war-plugin" % "1.4-beta1")
+

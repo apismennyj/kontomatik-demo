@@ -1,0 +1,9 @@
+lib
+activator
+activator-launch-1.3.7.jar
+activator.bat
+project
+target
+.idea
+LICENSE
+logs

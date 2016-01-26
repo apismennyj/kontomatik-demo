@@ -1,0 +1,52 @@
+<head>
+    <title>WebApp</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    <script src='https://signin.kontomatik.com/assets/signin-widget.js'></script>
+</head>
+<body>
+    <div id="header"><h1>Kontomatik Demo</h1></div>
+    <div id="section">
+        <div id='kontomatik'></div>
+    </div>
+    <script>
+            embedKontomatik({
+                client: 'ededu-test',
+                divId: 'kontomatik',
+                onSuccess: function(target, sessionId, sessionIdSignature) {
+                    // End-user successfully signed in to the bank
+                    // Pass target, sessionId and sessionIdSignature to your backend
+                    passParams(target, sessionId, sessionIdSignature);
+                },
+                locale: 'en',
+                ownerExternalId: 'SERVER_SIDE_RENDERED_VALUE_HERE',
+                showFavicons: true
+            });
+        </script>
+    <script>
+            passParams = function(target, sessionId, sessionIdSignature) {
+                var method = 'GET';
+                var url;
+                if (window.location.hostname == 'localhost')
+                    url = window.location.origin + '/session';
+                else
+                    url = window.location.origin + '/KontomatikDemo/session';
+
+                // Encoding session params in a query string
+                url += '?' + 'sessionId=' + sessionId + '&sessionIdSignature=' + sessionIdSignature;
+
+                // Creating HTTP request
+                var xhttp = new XMLHttpRequest();
+                
+                xhttp.open(method, url, true);
+                xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhttp.send();
+                xhttp.onreadystatechange = function() {
+                    if (xhttp.readyState == 4 && xhttp.status == 200) {
+                        // redirect
+                        window.location = url;
+                    }
+                };
+
+            };
+        </script>
+</body>

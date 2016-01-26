@@ -1,0 +1,34 @@
+<head>
+    <meta charset="UTF-8"/>
+    <title>WebApp</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+</head>
+<body>
+    <div id="header"><h1>Kontomatik Demo</h1></div>
+    <div id="section">
+        <div class="blanched">
+            <p>The <strong>import owners</strong> command returns the identity of the owner, and possibly that of the co-owner as well, of a bank account.</p>
+            <form action="@routes.Application.requestImportOwners()" method="get">
+                <input type="submit" value="Submit API call and show result for this user">
+            </form>
+        </div>
+        <div class="blanched">
+            <p> The <strong> default import</strong> command produces the most detailed view into a target bank account. It has the combined output of all the other API calls.</p>
+            <form action="@routes.Application.requestDefaultImport()" method="get">
+                <input type="submit" value="Submit API call and show result for this user">
+            </form>
+        </div>
+        <div class="blanched">
+            <p>The <strong>import accounts</strong> command returns a list of accounts, specifying account number, currency, balance and account owner. </p>
+            <form action="@routes.Application.requestImportAccounts()" method="get">
+                <input type="submit" value="Submit API call and show result for this user">
+            </form>
+        </div>
+        <div class="blanched">
+            <p>The<strong> import transactions</strong> command imports the transaction history of an account.</p>
+            <form action="@routes.Application.requestImportTransactions()" method="get">
+                <input type="submit" value="Submit API call and show result for this user">
+            </form>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    padding-top: 25px;
+}
+
+#header {
+    background-color: #000000 ;
+    height: 10%;
+    color: white ;
+    text-align: center ;
+
+}
+#section {
+    background-color:white ;
+    padding-top: 25px;
+    height: 100%;
+    text-align: center;
+}
+
+div.blanched {
+    margin: 5px;
+}

@@ -1,0 +1,22 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                           controllers.Application.index()
+
+GET     /signin                                     controllers.Application.signin()
+
+GET     /session                                    controllers.Application.initSession()
+
+GET     /results/import-owners                      controllers.Application.requestImportOwners()
+
+GET     /results/default-import                     controllers.Application.requestDefaultImport()
+
+GET     /results/import-accounts                    controllers.Application.requestImportAccounts()
+
+GET     /results/import-transactions                controllers.Application.requestImportTransactions()
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assests/*file              controllers.Assets.versioned(path="/public", file: Asset)
